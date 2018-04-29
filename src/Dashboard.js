@@ -2,86 +2,92 @@
 import React from 'react';
 import Card, { CardHeader, CardContent } from 'material-ui/Card';
 
-/* export default () => (
+import ReactChartkick, { ColumnChart, LineChart, PieChart } from 'react-chartkick'
+import Chart from 'chart.js'
+
+import './column.css';
+
+var dataProduto = [
+    ["A", "60.000" ],
+    ["B", "40.000" ],
+    ["C", "22.000" ],
+    ["D", "35.000" ],
+    ["E", "50.000" ]
+];
+
+const data = [
+    {"name":"Workout", 
+     "data": {"2017-01-01": 3, "2017-01-02": 4}
+    },
+    {"name":"Call parents", "data": {"2017-01-01": 5, "2017-01-02": 3}}
+  ];
+
+const dataEstado = [
+    { "name": "AM", "data":{ "A":  "15.000" }},
+    { "name": "AM", "data":{ "B":  "7.000" }},
+    { "name": "AM", "data":{ "C":  "7.000" }},
+    { "name": "AM", "data":{ "D":  "5.000" }},
+    { "name": "AM", "data":{ "E":  "7.000" }},
+    { "name": "MG", "data":{ "A":  "8.000" }},
+    { "name": "MG", "data":{ "B":  "5.000" }},
+    { "name": "MG", "data":{ "C":  "8.000" }},
+    { "name": "MG", "data":{ "D":  "7.000" }},
+    { "name": "MG", "data":{ "E":  "8.000" }},
+    { "name": "RJ", "data":{ "A":  "10.000" }},
+    { "name": "RJ", "data":{ "B":  "8.000" }},
+    { "name": "RJ", "data":{ "C": "5.000" }},
+    { "name": "RJ", "data":{ "D":  "5.000" }},
+    { "name": "RJ", "data":{ "E":  "7.000" }},
+    { "name": "RS", "data":{ "A":  "5.000" }},
+    { "name": "RS", "data":{ "B":  "5.000" }},
+    { "name": "RS", "data":{ "C":  "7.000" }},
+    { "name": "RS", "data":{ "D":  "5.000" }},
+    { "name": "RS", "data":{ "E":  "10.000" }},
+    { "name": "SP", "data":{ "A":  "8.000" }},
+    { "name": "SP", "data":{ "B":  "15.000" }},
+    { "name": "SP", "data":{ "C":  "5.000" }},
+    { "name": "SP", "data":{ "D":  "7.000" }},
+    { "name": "SP", "data":{ "E":  "7.000" }}
+]
+
+fetch('http://localhost:3001/sales/vendaproduto') 
+            .then(result=> {
+                return result.json();
+            })
+            .then( data => {
+                dataProduto = data;
+            })
+
+export default () => (
+    
     <Card>
         <CardHeader title="Welcome to the administration" />
-        <CardContent>Lorem ipsum sic dolor amet...</CardContent>
+        <CardContent>
+            <div className="row">
+                <div className="column" >
+                    <h2>Venda por Produto</h2>
+                    <ColumnChart data={dataProduto} />
+                    
+                </div>
+                <div className="column" >
+                    <h2>Venda por Estado</h2>
+                    <ColumnChart data={dataEstado} />
+                    
+                </div>
+            </div>
+            <div className="row">
+                <div className="column" >
+                    <h2>Venda por Cidade</h2>
+                    <ColumnChart data={dataProduto} />
+                    
+                </div>
+                <div className="column" >
+                    <h2>Lista dos 10 produtos</h2>
+                    
+                </div>
+            </div>
+        </CardContent>
+        
     </Card>
+
 );
-
- */
-
-import MobileTearSheet from '../../../MobileTearSheet';
-import {List, ListItem} from 'material-ui/List';
-import Subheader from 'material-ui/Subheader';
-import Divider from 'material-ui/Divider';
-import Checkbox from 'material-ui/Checkbox';
-import Toggle from 'material-ui/Toggle';
-
-const styles = {
-  root: {
-    display: 'flex',
-    flexWrap: 'wrap',
-  },
-};
-
-const ListExampleSettings = () => (
-  <div style={styles.root}>
-    <MobileTearSheet>
-      <List>
-        <Subheader>General</Subheader>
-        <ListItem
-          primaryText="Profile photo"
-          secondaryText="Change your Google+ profile photo"
-        />
-        <ListItem
-          primaryText="Show your status"
-          secondaryText="Your status is visible to everyone you use with"
-        />
-      </List>
-      <Divider />
-      <List>
-        <Subheader>Hangout Notifications</Subheader>
-        <ListItem
-          leftCheckbox={<Checkbox />}
-          primaryText="Notifications"
-          secondaryText="Allow notifications"
-        />
-        <ListItem
-          leftCheckbox={<Checkbox />}
-          primaryText="Sounds"
-          secondaryText="Hangouts message"
-        />
-        <ListItem
-          leftCheckbox={<Checkbox />}
-          primaryText="Video sounds"
-          secondaryText="Hangouts video call"
-        />
-      </List>
-    </MobileTearSheet>
-    <MobileTearSheet>
-      <List>
-        <ListItem
-          primaryText="When calls and notifications arrive"
-          secondaryText="Always interrupt"
-        />
-      </List>
-      <Divider />
-      <List>
-        <Subheader>Priority Interruptions</Subheader>
-        <ListItem primaryText="Events and reminders" rightToggle={<Toggle />} />
-        <ListItem primaryText="Calls" rightToggle={<Toggle />} />
-        <ListItem primaryText="Messages" rightToggle={<Toggle />} />
-      </List>
-      <Divider />
-      <List>
-        <Subheader>Hangout Notifications</Subheader>
-        <ListItem primaryText="Notifications" leftCheckbox={<Checkbox />} />
-        <ListItem primaryText="Sounds" leftCheckbox={<Checkbox />} />
-        <ListItem primaryText="Video sounds" leftCheckbox={<Checkbox />} />
-      </List>
-    </MobileTearSheet>
-  </div>
-);
-
-export default ListExampleSettings;

@@ -2,7 +2,6 @@
 import React from 'react';
 import { Admin, Resource } from 'react-admin';
 //import jsonServerProvider from 'ra-data-json-server';
-import { PostList, PostEdit, PostCreate } from './posts';
 import { UserList } from './users';
 import { ProductList, ProductEdit, ProductCreate } from './products'
 import PostIcon from '@material-ui/icons/Book';
@@ -21,6 +20,7 @@ const App = () => (
         {/*<Resource name="posts" list={PostList} icon={PostIcon} />*/}
         <Resource name="products" list={ProductList} icon={PostIcon} edit={ProductEdit} create={ProductCreate} />
         <Resource name="users" list={UserList} icon={UserIcon} />
+
     </Admin>
 ); 
 

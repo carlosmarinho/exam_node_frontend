@@ -55,7 +55,6 @@ const convertDataProviderRequestToHTTP = (type, resource, params) => {
             options: { method: 'PUT', body: JSON.stringify(params.data) },
         };
     case CREATE:
-     console.log('ssdlfjdslfjsdfsdl creando')
         return {
             url: `${API_URL}/${resource}`,
             options: { method: 'POST', body: JSON.stringify(params.data) },
