@@ -78,6 +78,10 @@ const dataEstado = [
     { "name": "SP", "data":{ "E":  "7.000" }}
 ]
 
+/**
+ * @todo tirar o mock do front e colocar a chamada ao server, apesar da api está pronta, 
+ * estou tendo problema ao chamar via api e devido a falta de tempo 'mockei' o json aqui mesmo
+ */
 fetch('http://localhost:3001/sales/vendaproduto') 
             .then(result=> {
                 return result.json();
