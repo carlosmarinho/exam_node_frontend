@@ -22,6 +22,34 @@ const data = [
     {"name":"Call parents", "data": {"2017-01-01": 5, "2017-01-02": 3}}
   ];
 
+const dataCidade = [
+    { "name": "Manaus", "data":{ "A": "15.000" }},
+    { "name": "Manaus", "data":{ "B": "7.000" }},
+    { "name": "Manaus", "data":{ "C": "7.000" }},
+    { "name": "Manaus 1", "data":{ "D": "5.000" }},
+    { "name": "Manaus 1", "data":{ "E": "7.000" }},
+    { "name": "Belo Horizonte", "data":{ "A": "8.000" }},
+    { "name": "Belo Horizonte", "data":{ "B": "5.000" }},
+    { "name": "Belo Horizonte", "data":{ "C": "8.000" }},
+    { "name": "Ouro Preto", "data":{ "D": "7.000" }},
+    { "name": "Ouro Preto", "data":{ "E": "8.000" }},
+    { "name": "Rio de Janeiro", "data":{ "A": "10.000" }},
+    { "name": "Rio de Janeiro", "data":{ "B": "8.000" }},
+    { "name": "Rio de Janeiro", "data":{ "C": "5.000" }},
+    { "name": "Niterói", "data":{ "D": "5.000" }},
+    { "name": "Niterói", "data":{ "E": "7.000" }},
+    { "name": "Santa Catarina", "data":{ "A": "5.000" }},
+    { "name": "Santa Catarina", "data":{ "B": "5.000" }},
+    { "name": "Santa Catarina", "data":{ "C": "7.000" }},
+    { "name": "Santa Catarina", "data":{ "D": "5.000" }},
+    { "name": "Santa Catarina", "data":{ "E": "10.000" }},
+    { "name": "São Paulo", "data":{ "A": "8.000" }},
+    { "name": "São Paulo", "data":{ "B": "15.000" }},
+    { "name": "São Paulo", "data":{ "C": "5.000" }},
+    { "name": "Ubatuba", "data":{ "D": "7.000" }},
+    { "name": "Ubatuba", "data":{ "E": "7.000" }}
+]
+
 const dataEstado = [
     { "name": "AM", "data":{ "A":  "15.000" }},
     { "name": "AM", "data":{ "B":  "7.000" }},
@@ -76,13 +104,9 @@ export default () => (
                 </div>
             </div>
             <div className="row">
-                <div className="column" >
+                <div >
                     <h2>Venda por Cidade</h2>
-                    <ColumnChart data={dataProduto} />
-                    
-                </div>
-                <div className="column" >
-                    <h2>Lista dos 10 produtos</h2>
+                    <ColumnChart data={dataCidade} />
                     
                 </div>
             </div>
