@@ -1,9 +1,15 @@
 // in src/users.js
 import React from 'react';
-import { List, Datagrid, TextField, Edit, Create, EditButton, DeleteButton, SimpleForm, TextInput, DisabledInput } from 'react-admin';
+import { Filter, List, Datagrid, TextField, Edit, Create, EditButton, DeleteButton, SimpleForm, TextInput, DisabledInput } from 'react-admin';
+
+const ProductFilter = (props) => (
+    <Filter {...props}>
+        <TextInput label="Search" source="q" alwaysOn />
+    </Filter>
+);
 
 export const ProductList = (props) => (
-    <List title="Todos os Produtos" {...props} >
+    <List title="Todos os Produtos" {...props} filters={<ProductFilter />} >
         <Datagrid>
             <TextField source="id" />
             <TextField source="name" />
