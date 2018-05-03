@@ -13,10 +13,5 @@ Não esqueça de rodar a API 'exam_node' que ira rodá na seguinte url http://lo
 
 
 MELHORIAS:
-
-** @todo Tirar o mock dos relatórios do frontend e consultar a API que já está funcionando:
-   - http://localhost:3001/sales/vendaproduto (GET)
-   - http://localhost:3001/sales/vendaestado (GET)
-   - http://localhost:3001/sales/vendacidade (GET)
    
 ** @todo Fazer as traduções de todo o frontend para o português 
